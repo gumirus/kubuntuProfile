@@ -59,4 +59,4 @@ echo $ZSH_CUSTOM   # должно показывать ~/.oh-my-zsh/custom
 
 ## 📝 Лицензия
 
-MIT (или укажите свою)
+MIT (Ruslan Gumirov)
