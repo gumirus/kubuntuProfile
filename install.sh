@@ -150,16 +150,24 @@ safe_link() {
     echo "   Создана ссылка $dst -> $src"
 }
 
-# Основные конфиги
+# Основные конфиги в корне
 safe_link ".zshrc" "$HOME/.zshrc"
 safe_link ".gitconfig" "$HOME/.gitconfig" 2>/dev/null || true
 
-# Oh My Zsh custom
-safe_link "oh-my-zsh-custom" "$HOME/.oh-my-zsh/custom"
+# WezTerm – теперь ссылка на папку .config/wezterm
+if [ -d ".config/wezterm" ]; then
+    mkdir -p "$HOME/.config"
+    safe_link ".config/wezterm" "$HOME/.config/wezterm"
+else
+    echo -e "${YELLOW}⚠️ Папка .config/wezterm не найдена, пропускаю...${NC}"
+fi
 
-# WezTerm
-mkdir -p "$HOME/.config"
-safe_link "wezterm" "$HOME/.config/wezterm"
+# Oh My Zsh custom – ссылка на папку
+if [ -d "oh-my-zsh-custom" ]; then
+    safe_link "oh-my-zsh-custom" "$HOME/.oh-my-zsh/custom"
+else
+    echo -e "${YELLOW}⚠️ Папка oh-my-zsh-custom не найдена, пропускаю...${NC}"
+fi
 
 # 9. Проверка и добавление плагинов в .zshrc, если их там нет
 # (Можно автоматически добавить, но проще оставить пользователю)
