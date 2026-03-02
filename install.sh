@@ -92,20 +92,20 @@ install_zsh_plugin "zsh-users/zsh-syntax-highlighting"
 install_zsh_plugin "zsh-users/zsh-autosuggestions"
 
 # 5. Установка WezTerm (опционально)
-if ! command -v wezterm &> /dev/null; then
-    if confirm "Хотите установить WezTerm?"; then
-        echo -e "${YELLOW}🔧 Добавляю репозиторий WezTerm и устанавливаю...${NC}"
-        # Добавление GPG-ключа и репозитория
-        curl -fsSL https://apt.fury.io/wez/gpg.key | sudo gpg --yes --dearmor -o /usr/share/keyrings/wezterm-fury.gpg
-        echo 'deb [signed-by=/usr/share/keyrings/wezterm-fury.gpg] https://apt.fury.io/wez/ * *' | sudo tee /etc/apt/sources.list.d/wezterm.list > /dev/null
-        sudo apt update
-        sudo apt install -y wezterm
-    else
-        echo -e "${YELLOW}⏭️ WezTerm пропущен.${NC}"
-    fi
-else
-    echo -e "${GREEN}✅ WezTerm уже установлен${NC}"
-fi
+# if ! command -v wezterm &> /dev/null; then
+#     if confirm "Хотите установить WezTerm?"; then
+#         echo -e "${YELLOW}🔧 Добавляю репозиторий WezTerm и устанавливаю...${NC}"
+#         # Добавление GPG-ключа и репозитория
+#         curl -fsSL https://apt.fury.io/wez/gpg.key | sudo gpg --yes --dearmor -o /usr/share/keyrings/wezterm-fury.gpg
+#         echo 'deb [signed-by=/usr/share/keyrings/wezterm-fury.gpg] https://apt.fury.io/wez/ * *' | sudo tee /etc/apt/sources.list.d/wezterm.list > /dev/null
+#         sudo apt update
+#         sudo apt install -y wezterm
+#     else
+#         echo -e "${YELLOW}⏭️ WezTerm пропущен.${NC}"
+#     fi
+# else
+#     echo -e "${GREEN}✅ WezTerm уже установлен${NC}"
+# fi
 
 # 6. Установка Docker (официальный способ)
 if ! check_command docker; then
