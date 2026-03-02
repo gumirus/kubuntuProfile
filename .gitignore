@@ -1,0 +1,7 @@
+# Исключаем приватные ключи и историю
+*~
+*.swp
+.DS_Store
+.zsh_history
+.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/.git
+.oh-my-zsh/custom/plugins/zsh-autosuggestions/.git
