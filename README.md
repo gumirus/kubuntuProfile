@@ -17,25 +17,6 @@
 
 3. **Перезапустите терминал** или выполните `source ~/.zshrc`, чтобы изменения вступили в силу.
 
-## 📦 Зависимости
-
-Перед установкой убедитесь, что в системе установлены:
-
-- **Zsh**  
-  ```bash
-  sudo apt install zsh
-  ```
-
-- **Oh My Zsh**  
-  ```bash
-  sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-  ```
-
-- **WezTerm** (опционально)  
-  ```bash
-  sudo apt install wezterm
-  ```
-
 ## 📦 Что установит скрипт
 
 При запуске `./install.sh` будет автоматически выполнено:
